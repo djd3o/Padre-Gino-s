@@ -1,6 +1,6 @@
 const intl = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "USD",
+  currency: "USD", // feel free to change to your local currency
 });
 
 export default function Cart({ cart, checkout }) {
@@ -15,13 +15,13 @@ export default function Cart({ cart, checkout }) {
       <ul>
         {cart.map((item, index) => (
           <li key={index}>
-            <span className="size">{item.size}</span> -
-            <span className="type">{item.pizza.name}</span> -
-            <span className="size">{item.price}</span>
+            <span className="size">{item.size}</span> –
+            <span className="type">{item.pizza.name}</span> –
+            <span className="price">{item.price}</span>
           </li>
         ))}
       </ul>
-      <p> Total: {intl.format(total)}</p>
+      <p>Total: {intl.format(total)}</p>
       <button onClick={checkout}>Checkout</button>
     </div>
   );
